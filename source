@@ -1,0 +1,21 @@
+source
+https://jaranguda.com/membuat-diagram-dengan-chartjs-di-codeigniter-3/
+https://kursuswebprogramming.com/cara-membuat-pencarian-data-menggunakan-codeigniter/
+
+sql
+
+*select per shift
+
+SELECT Performance, Quality, OEE FROM `oee_data`
+WHERE date = '2021-02-25' AND shift = 3 AND nama_mesin = "Cutting A";
+
+*select per hari
+
+
+
+*select per minggu/bulan
+
+SELECT Performance, Quality, OEE FROM `oee_data`
+WHERE nama_mesin = "Coding Manual" AND date >= '2021-02-25' AND date <= '2021-02-27';
+
+*with count persentase 

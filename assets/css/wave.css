@@ -1,0 +1,101 @@
+section.home .wave {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: url("../img/wave.png");
+	background-size: 1000px 100px;
+	padding-top: 100px;
+}
+
+section.home .wave.wave1 {
+	animation: waveanimate 20s linear infinite;
+	z-index: 10;
+	opacity: 1;
+	animation-delay: 0s;
+	bottom: 0;
+}
+
+section.home .wave.wave2 {
+	animation: waveanimate2 15s linear infinite;
+	z-index: 9;
+	opacity: 0.5;
+	animation-delay: -5s;
+	bottom: 10px;
+}
+
+section.home .wave.wave3 {
+	animation: waveanimate 10s linear infinite;
+	z-index: 8;
+	opacity: 0.4;
+	animation-delay: -2s;
+	bottom: 15px;
+}
+
+section.home .wave.wave4 {
+	animation: waveanimate2 5s linear infinite;
+	z-index: 7;
+	opacity: 0.7;
+	animation-delay: -5s;
+	bottom: 20px;
+}
+
+section.home1 .wave {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: url("../img/wave.png");
+	background-size: 1000px 100px;
+	padding-top: 100px;
+}
+
+section.home1 .wave.wave1 {
+	animation: waveanimate 20s linear infinite;
+	z-index: 10;
+	opacity: 1;
+	animation-delay: 0s;
+	bottom: 0;
+}
+
+section.home1 .wave.wave2 {
+	animation: waveanimate2 15s linear infinite;
+	z-index: 9;
+	opacity: 0.5;
+	animation-delay: -5s;
+	bottom: 10px;
+}
+
+section.home1 .wave.wave3 {
+	animation: waveanimate 10s linear infinite;
+	z-index: 8;
+	opacity: 0.4;
+	animation-delay: -2s;
+	bottom: 15px;
+}
+
+section.home1 .wave.wave4 {
+	animation: waveanimate2 5s linear infinite;
+	z-index: 7;
+	opacity: 0.7;
+	animation-delay: -5s;
+	bottom: 20px;
+}
+
+@keyframes waveanimate {
+	0% {
+		background-position-x: 0;
+	}
+	100% {
+		background-position-x: 1000px;
+	}
+}
+
+@keyframes waveanimate2 {
+	0% {
+		background-position-x: 0;
+	}
+	100% {
+		background-position-x: -1000px;
+	}
+}

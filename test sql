@@ -1,0 +1,57 @@
+-- just select --
+SELECT OEE FROM `oee_data_daily`
+WHERE nama_mesin = "Coding Manual" AND MONTH(date) = 2  and YEAR(date) = 2021
+
+-- select avg --
+SELECT AVG (Availibility),(Performance),(Quality),(OEE)
+FROM `oee_data_daily`
+WHERE nama_mesin = "Coding Manual" AND MONTH(date) = 2  and YEAR(date) = 2021
+
+-- insert and avg --
+INSERT INTO B (Time, Value) VALUES(SELECT Time, AVG(Value) FROM A WHERE Time  BETWEEN Time AND DATE_ADD(Time, interval 55 minutes))
+
+
+
+INSERT INTO `oee_data_monthly`(Bulan, Availibility)
+SELECT "Januari, 2021", AVG(Availibility)
+FROM `oee_data_daily`
+WHERE nama_mesin = "Coding Manual" AND MONTH(date) = 2  and YEAR(date) = 2021
+
+succed per shift
+INSERT INTO `oee_data_daily` (OEE)
+SELECT AVG(OEE)
+FROM `oee_data`
+WHERE nama_mesin = "Coding Manual" AND date = '2021-02-27' AND shift BETWEEN 1 AND 3
+
+for sum
+INSERT INTO `oee_data_daily` (OEE)
+SELECT SUM(OEE)
+FROM `oee_data`
+WHERE nama_mesin = "Coding Manual" AND date = '2021-02-27' AND shift BETWEEN 1 AND 3
+
+
+-- sql shift to daily --
+test sql complete shift to daily
+INSERT INTO `oee_data_daily` (date, nama_mesin, WaktuYgTer, WaktuKerMes, PlannedDt, UnplannedDt, SetupTime, LoadingTime, OperationTime, AvailRatio, JumlahOutput, RejectUnit, IdealCycleTime, ActualCycleTime, Performance, Quality, OEE)
+SELECT '2021-02-27', "Coding Manual", SUM(WaktuYgTer), SUM(WaktuKerMes), SUM(PlannedDt), SUM(UnplannedDt), SUM(SetupTime), SUM(LoadingTime), SUM(OperationTime), AVG(AvailRatio), SUM(JumlahOutput), SUM(RejectUnit), AVG(IdealCycleTime), AVG(ActualCycleTime), AVG(Performance), AVG(Quality), AVG(OEE)
+        FROM `oee_data`
+        WHERE nama_mesin = "Coding Manual" AND date = '2021-02-27' AND shift BETWEEN 1 AND 3;
+
+test sql effectivity
+INSERT INTO `oee_data_daily` (date, nama_mesin, WaktuYgTer, WaktuKerMes, PlannedDt, UnplannedDt, SetupTime, LoadingTime, OperationTime, AvailRatio, JumlahOutput, RejectUnit, IdealCycleTime, ActualCycleTime, Performance, Quality, OEE)
+SELECT '2021-02-27', "Coding Manual", SUM(WaktuYgTer), SUM(WaktuKerMes), SUM(PlannedDt), SUM(UnplannedDt), SUM(SetupTime), SUM(WaktuKerMes)-SUM(PlannedDt), (LoadingTime-(SetupTime+UnplannedDt)), ((OperationTime/LoadingTime)*100), SUM(JumlahOutput), SUM(RejectUnit), AVG(IdealCycleTime), (OperationTime/JumlahOutput), (((JumlahOutput*IdealCycleTime)/OperationTime)*100),(((JumlahOutput-RejectUnit)/JumlahOutput)*100), ((AvailRatio*Performance*Quality)/10000)
+        FROM `oee_data`
+        WHERE nama_mesin = "Coding Manual" AND date = '2021-02-27' AND shift BETWEEN 1 AND 3;
+
+INSERT INTO `oee_data_daily` (date, nama_mesin, WaktuYgTer, WaktuKerMes, PlannedDt, UnplannedDt, SetupTime, LoadingTime, OperationTime, AvailRatio, JumlahOutput, RejectUnit, IdealCycleTime, ActualCycleTime, Performance, Quality, OEE)
+SELECT '2021-02-27', "Coding Manual", SUM(WaktuYgTer), SUM(WaktuKerMes), SUM(PlannedDt), SUM(UnplannedDt), SUM(SetupTime), SUM(WaktuKerMes)-SUM(PlannedDt), SUM(LoadingTime)-(SUM(SetupTime)+SUM(UnplannedDt)), ((OperationTime/LoadingTime)*100), SUM(JumlahOutput), SUM(RejectUnit), AVG(IdealCycleTime), (OperationTime/JumlahOutput), (((JumlahOutput*IdealCycleTime)/OperationTime)*100),(((JumlahOutput-RejectUnit)/JumlahOutput)*100), ((AvailRatio*Performance*Quality)/10000)
+        FROM `oee_data`
+        WHERE nama_mesin = "Coding Manual" AND date = '2021-02-27' AND shift BETWEEN 1 AND 3;
+-- sql shift to daily --
+
+-- sql shift to monthly --
+INSERT INTO `oee_data_monthly`(Bulan, nama_mesin, Availibility, Perfromance, Quality, OEE)
+SELECT "Januari, 2021", "Coding Manual", AVG(Availibility),AVG(Performance),AVG(Quality),AVG(OEE)
+FROM `oee_data_daily`
+WHERE nama_mesin = "Coding Manual" AND MONTH(date) = 2  and YEAR(date) = 2021
+-- sql shift to monthly --

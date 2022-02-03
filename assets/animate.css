@@ -1,0 +1,154 @@
+.home h3 strong,
+.kandidat h2.title strong {
+	position: relative;
+	color: #034a9f;
+	width: 100%;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+	line-height: 0.7em;
+	outline: none;
+	animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+	0%,
+	18%,
+	20%,
+	50.1%,
+	60%,
+	65.1%,
+	80%,
+	90.1%,
+	92% {
+		color: #034a9f;
+		text-shadow: none;
+	}
+
+	18.1%,
+	20.1%,
+	50%,
+	60.1%,
+	65%,
+	80.1%,
+	90%,
+	92.1%,
+	100% {
+		color: #034a9f;
+		text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white,
+			0 0 160px white;
+	}
+}
+
+.effect-wrap .effect {
+	position: absolute;
+	z-index: 1;
+}
+
+.effect-1 {
+	width: 30px;
+	height: 30px;
+	border: 4px solid #ff00dd;
+	right: 5%;
+	bottom: 20%;
+	animation: spin 10s linear infinite;
+}
+
+.effect-1-1 {
+	width: 30px;
+	height: 30px;
+	border: 4px solid #ff00dd;
+	left: 5%;
+	top: 20%;
+	animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(10deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.effect-2 {
+	left: 3%;
+	bottom: 20%;
+	width: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	animation: topBounce 3s ease-in-out infinite;
+}
+
+.effect-2-1 {
+	right: 3%;
+	top: 20%;
+	width: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	animation: topBounce 3s ease-in-out infinite;
+}
+
+.effect-2 div {
+	height: 3px;
+	width: 3px;
+	background-color: #f3c90d;
+	margin: 0 3px 8px;
+}
+
+.effect-2-1 div {
+	height: 3px;
+	width: 3px;
+	background-color: #f3c90d;
+	margin: 0 3px 8px;
+	z-index: 1;
+}
+
+@keyframes topBounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(25px);
+	}
+}
+
+.effect-3 {
+	height: 180px;
+	width: 180px;
+	border: 25px solid #0d5df3;
+	border-radius: 50%;
+	left: 50%;
+	top: -80px;
+	animation: leftBounce 3s ease-in-out infinite;
+}
+
+@keyframes leftBounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateX(25px);
+	}
+}
+
+.effect-4 {
+	border-top: 30px solid transparent;
+	border-left: 30px solid #06d79c;
+	left: 30%;
+	top: 20%;
+	animation: spin 15s linear infinite;
+}
+
+.effect-4::before {
+	content: "";
+	border-top: 30px solid transparent;
+	border-left: 30px solid #06d79c;
+	position: absolute;
+	opacity: 0.5;
+	left: -35px;
+	top: -25px;
+}

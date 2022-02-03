@@ -1,0 +1,112 @@
+@media only screen and (max-width: 991px) {
+	section.home h5 {
+		font-size: 40px;
+	}
+
+	section.home h3 {
+		font-size: 45px;
+	}
+
+	section.home span {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-widht: 768px) {
+	section.home h5 {
+		font-size: 30px;
+	}
+
+	section.home h3 {
+		font-size: 35px;
+	}
+
+	section.home span {
+		font-size: 10px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	section.home h5 {
+		font-size: 25px;
+	}
+
+	section.home h3 {
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 588px) {
+	section.home .container {
+		padding: 150px 50px 0;
+	}
+
+	.lembagaBg div.h1.text-center.text-dark h5 {
+		font-size: 30px;
+	}
+}
+
+
+/* HOME LOGIN */
+@media only screen and (max-width: 991px) {
+	section.home1 h5 {
+		font-size: 40px;
+	}
+
+	section.home1 h3 {
+		font-size: 45px;
+	}
+
+	section.home1 span {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-widht: 768px) {
+	section.home1 h5 {
+		font-size: 30px;
+	}
+
+	section.home1 h3 {
+		font-size: 35px;
+	}
+
+	section.home1 span {
+		font-size: 10px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	section.home1 h5 {
+		font-size: 25px;
+	}
+
+	section.home1 h3 {
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 588px) {
+	section.home1 {
+		padding-top: 20px;
+	}
+
+	section.home1 .container {
+		padding: 150px 50px 0;
+	}
+
+	section.home1 .alert {
+		font-size: 12px;
+	}
+
+	.lembagaBg div.h1.text-center.text-dark h5 {
+		font-size: 30px;
+	}
+}
+
+/*Profile */
+@media only screen and (max-width : 430px){
+	.profile .table {
+		font-size: 15px;
+	}
+}
